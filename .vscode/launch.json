@@ -12,15 +12,10 @@
         },
 
         {
-            "name": "flutter_architecture",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "flutter_architecture (profile mode)",
+            "name": "Flutter",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
-        }
+            "program": "lib/main/main.dart",
+        },
     ]
 }
