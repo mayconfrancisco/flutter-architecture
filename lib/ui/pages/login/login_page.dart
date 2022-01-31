@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture/ui/components/components.dart';
 
+import '../../pages/pages.dart';
+
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key key}) : super(key: key);
+  final LoginPresenter presenter;
+
+  const LoginPage(
+    this.presenter, {
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +33,7 @@ class LoginPage extends StatelessWidget {
                         color: Theme.of(context).primaryColorLight,
                       ),
                     ),
+                    onChanged: presenter.validateEmail,
                     keyboardType: TextInputType.emailAddress,
                   ),
                   Padding(
@@ -39,6 +47,7 @@ class LoginPage extends StatelessWidget {
                           )),
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
+                      onChanged: presenter.validadePassword,
                     ),
                   ),
                   RaisedButton(
