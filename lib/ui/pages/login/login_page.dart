@@ -30,7 +30,10 @@ class LoginPage extends StatelessWidget {
                       builder: (context, emailErrorSnapshot) {
                         return TextFormField(
                           decoration: InputDecoration(
-                            errorText: emailErrorSnapshot.data,
+                            errorText: emailErrorSnapshot.hasData &&
+                                    emailErrorSnapshot.data.isNotEmpty
+                                ? emailErrorSnapshot.data
+                                : null,
                             labelText: 'Email',
                             icon: Icon(
                               Icons.email,
